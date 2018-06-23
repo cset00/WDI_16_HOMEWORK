@@ -83,3 +83,9 @@ var movieInfo = function(movie) { // parameter
 
 console.log(movieInfo(faveMovie[0]));
 
+// ^ so  if i wanted to print all of the movie details in faveMovie.. i'd have to use a for loop...?
+
+for (var k=0;k<faveMovie.length;k++) {
+    console.log(movieInfo(faveMovie[k]));
+}
+

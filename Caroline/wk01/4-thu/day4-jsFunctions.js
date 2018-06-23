@@ -62,10 +62,10 @@ var combineWords = function(word1,word2) {
     // raised to the power of - another multiplication?
     
     var transmogrifier = function (number1,number2,number3) {
-        return (number1 * number2)*number3;
+        return (number1 * number2)*number3; 
     }
     
-    console.log(transmogrifier(5,3,2));
+    transmogrifier(5,3,2);
     
     
     // 5. Write a function `wordReverse` that accepts a single argument, a string. The
