@@ -17,23 +17,34 @@ var trainLines = [
 
 //Probs could just have one function for isValid..
 // Take input for origin/destination & the prompt message?
-var isValid = function(){
-    if (trainLines[0].stations.includes(origin) === false){
-        if (trainLines[1].stations.includes(origin) === false){
-            if (trainLines[2].stations.includes(origin) === false){
-                origin = prompt('SORRY TRY AGAIN - ORIGIN')
-                isValid()
-            }
-        }
-    }
-}
+// var isValid = function(){
+//     if (trainLines[0].stations.includes(origin) === false){
+//         if (trainLines[1].stations.includes(origin) === false){
+//             if (trainLines[2].stations.includes(origin) === false){
+//                 origin = prompt('SORRY TRY AGAIN - ORIGIN')
+//                 isValid()
+//             }
+//         }
+//     }
+// }
 
-var isValid2 = function(){
-    if (trainLines[0].stations.includes(destination) === false){
-        if (trainLines[1].stations.includes(destination) === false){
-            if (trainLines[2].stations.includes(destination) === false){
-                destination = prompt('SORRY TRY AGAIN - DESTINATION')
-                isValid2()
+// var isValid2 = function(){
+//     if (trainLines[0].stations.includes(destination) === false){
+//         if (trainLines[1].stations.includes(destination) === false){
+//             if (trainLines[2].stations.includes(destination) === false){
+//                 destination = prompt('SORRY TRY AGAIN - DESTINATION')
+//                 isValid2()
+//             }
+//         }
+//     }
+// }
+
+var isValid = function(start,promptMessage){
+    if (trainLines[0].stations.includes(start) === false){
+        if (trainLines[1].stations.includes(start) === false){
+            if (trainLines[2].stations.includes(start) === false){
+                start = prompt(promptMessage)
+                isValid(start,promptMessage)
             }
         }
     }
@@ -41,11 +52,11 @@ var isValid2 = function(){
 
 //var origin = 'Windsor'
 var origin = prompt('please enter your station of origin')
-isValid()
+isValid(origin,'SORRY TRY AGAIN - ORIGIN')
  
 //var destination = 'Richmond'
 var destination = prompt('please enter your destination station')
-isValid2()
+isValid(destination,'SORRY TRY AGAIN - DESTINATION')
 
 var originLine
 var destinationLine
@@ -89,23 +100,23 @@ if (originLine === destinationLine){
 
     if (toRichmond.indexOf(origin)>toRichmond.indexOf('Richmond')) {
         toRichmond = originLine.stations.reverse()
-        console.log('reversing the originLine')
+        //console.log('reversing the originLine')
     }
         
     var originIndex = toRichmond.indexOf(origin)
     var firstLeg = toRichmond.slice(originIndex,toRichmond.indexOf('Richmond'))
-    console.log('normal originLine')
+    //console.log('normal originLine')
         
     if (fromRichmond.indexOf(destination)<fromRichmond.indexOf('Richmond')){
         fromRichmond = destinationLine.stations.reverse()
-        console.log('reversing destinationLine')
+        //console.log('reversing destinationLine')
     }
     
     var destinationIndex = fromRichmond.indexOf(destination)
     var secondLeg = fromRichmond.slice(fromRichmond.indexOf('Richmond'),destinationIndex+1)
     
     var newJourney = firstLeg.concat(secondLeg)
-    console.log('normal destinationLine')
+    //console.log('normal destinationLine')
     printDeets(newJourney)
 } 
 

@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+body {
+    width: 75%;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    /* margin: 0 auto; */
+    justify-content: center;
+    /* background-color: bisque; */
+}
+
+header nav {
+    background-color: black;
+    
+}
+
+nav ul {
+    padding: 0px;
+    display: flex;
+    width: 100%;
+}
+
+article ul {
+    padding: 0 0 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+.mainNav, .footerNav {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.mainNav {
+    border: 1px solid white;
+    width: 16.67%;
+    text-align: center;
+    color: white;
+}
+
+.footerNav {
+    border-right: 1px solid lightgrey;
+    text-align: center;
+    color: red;
+    padding: 0 3px;
+    font-size: 15px;
+}
+
+header nav ul li a {
+    color: white;
+}
+
+p {
+    color: darkslategrey;
+}
+
+section {
+    width: 70%;
+    padding: 20px 10px 0px 10px;
+    /* background-color: mistyrose; */
+}
+
+aside {
+    width: 30%;
+    padding: 20px 10px;
+    margin-left: 10px;
+    /* background-color: plum; */
+}
+
+footer {
+    margin: -10px 0 50px 0;
+}
+
+img {
+    width: 100%;
+}
+
+h1,h2,h4,a {
+    font-family: 'Helvetica';
+}
+
+h2 {
+    margin: 5px 0px 15px 0px;
+}
+
+h3 {
+    margin: 15px 0 0 0;
+    color: lightgrey;
+}
+
+header {
+    margin-top: 20px;
+}
+
+header h1 {
+    display: inline;
+    color: red;
+    font-weight: 200;
+}
+
+header h3 {
+    font-family: 'Helvetica';
+    display: inline;
+    font-weight: 400;
+}
+
+.right {
+    text-align: right;
+    /* background-color: red; */
+}
+
+.more {
+    font-weight: 600;
+    /* font weight doesn't seem to work :/ */
+}
+
+article {
+    border-bottom: 2px solid lightgrey;
+    margin: 20px 0px;
+}
+
+.noBottomLine {
+    border-bottom: none;
+}
