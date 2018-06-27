@@ -11,8 +11,7 @@ body {
 main {
     display: flex;
     /* margin: 0 auto; */
-    justify-content: center;
-    /* background-color: bisque; */
+    justify-content: center; 
 }
 
 header nav {
@@ -129,6 +128,22 @@ article {
     margin: 20px 0px;
 }
 
-.noBottomLine {
+article:last-child {
     border-bottom: none;
+}
+
+.firstLetter {
+    font-size: 50px;
+    float: left;
+    padding-right: 8px;
+    /* text-justify: center; */
+    /* line-height: 20px; */
+    margin-bottom: -10px;
+    
+}
+
+article p {
+    overflow:auto;
+    /* font-size: 10px; */
+    
 }
