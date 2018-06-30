@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    font-family: "Courier New"
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;
+   
+}
+
+header {
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-around;
+}
+
+header div {
+    width: 33.33%;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    height: 50px;
+    background-color: red;
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+div h1 {
+    /* this is the title */
+}
+
+main {
+    clear: both;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.savings, .checking {
+    width: 240px;
+    height: 220px;
+    background-color: yellow;
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
+    border: 1.5px solid black;
+    
+}
+
+.savings {
+    background-color: orange;
+}
+
+.savings > p, .checking > p {
+    line-height: 5px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.balance {
+    /* background-color: red; */
+    /* margin: 0 auto; */
+    font-size: 200%;
+    font-weight: 600;
+}
+
+input {
+    display: block;
+    margin: 5px auto 10px auto;
+    background-color: teal;
+    border: 2px solid black;
+    height: 40px;
+    color: lightgrey;
+    font-size: 15px;
+    padding: 5px;
+}
+
+input::placeholder {
+    color: grey;
+    padding: 5px;
+
+}
+
+button {
+    background-color: lightgrey;
+    border-radius: 6px;
+    height: 25px;
+    font-weight: 600;
+    line-height: 8px;
+}
+
+.balance {
+
+}
+
+.container {
+    width: 100%;
+    margin-top: -10px;
+}
