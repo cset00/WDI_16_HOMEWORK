@@ -55,7 +55,8 @@ var updateBalance = function() {
     savingsBalance.textContent = new Intl.NumberFormat().format(balance.toFixed(2))
 }
 
-//for some reason this function is error-ing... 
+//for some reason this function is error-ing when i call it under var balance... 
+//it works fine in the browser's DOM though.. 
 
 // var checkBalance = function() {
 //     if(balance === 0) {
