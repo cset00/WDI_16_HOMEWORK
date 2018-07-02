@@ -12,61 +12,70 @@ console.log('online bank')
 //Note: only savings work for now...
 
 var userInputSav = document.querySelector('.sav-input')
+var userInputChk = document.querySelector('.chk-input')
 var savingsBalance = document.querySelector('#sav-bal')
 var checkingBalance = document.querySelector('#chk-bal')
 var withdrawButton = document.querySelector('.wd-btn')
 var depositButton = document.querySelector('.dp-btn')
 var savingsBackground = document.querySelector('.savings')
 var checkingBackground = document.querySelector('.checking')
+var withdrawChkButton = document.querySelector('.wdchk-btn')
+var depositChkButton = document.querySelector('.dpchk-btn')
 
-var balance = 0;
-if(balance === 0) {
-    savingsBackground.style.backgroundColor = "salmon"
-} else {
-    savingsBackground.style.backgroundColor = "lightgrey";
-}
-
-var deposit = function() {
-    balance = Number(userInputSav.value) + balance
-    updateBalance()
-    if(balance === 0) {
-        savingsBackground.style.backgroundColor = "salmon"
-    } else {
-        savingsBackground.style.backgroundColor = "lightgrey";
-    }
-}
-
-var withdraw = function() {
-    if (Number(userInputSav.value) > Number(savingsBalance.textContent)){
-        alert("You can't withdraw more than your available balance")
-        return balance
-    }
-    balance = balance - Number(userInputSav.value)
-    updateBalance()
-    if(balance === 0) {
-        savingsBackground.style.backgroundColor = "salmon"
-    } else {
-        savingsBackground.style.backgroundColor = "lightgrey";
-    }
-}
-
-
-var updateBalance = function() {
-    savingsBalance.textContent = new Intl.NumberFormat().format(balance.toFixed(2))
-}
-
-//for some reason this function is error-ing when i call it under var balance... 
-//it works fine in the browser's DOM though.. 
-
-// var checkBalance = function() {
-//     if(balance === 0) {
+// var updateBalance = function() {
+//     if(savBalance === 0) {
 //         savingsBackground.style.backgroundColor = "salmon"
 //     } else {
-//         savingsBackground.style.backgroundColor = "grey";
+//         savingsBackground.style.backgroundColor = "lightgrey";
 //     }
+//     savingsBalance.textContent = new Intl.NumberFormat().format(savBalance.toFixed(2))
 // }
 
+var updateBalance = function(accountBal,whichBG,text) {
+    if(accountBal === 0) {
+        whichBG.style.backgroundColor = "salmon"
+    } else {
+        whichBG.style.backgroundColor = "lightgrey";
+    }
+    text.textContent = new Intl.NumberFormat().format(accountBal.toFixed(2))
+}
 
-withdrawButton.addEventListener('click', withdraw)
-depositButton.addEventListener('click', deposit)
+var savDeposit = function() {
+    savBalance = Number(userInputSav.value) + savBalance
+    updateBalance(savBalance,savingsBackground,savingsBalance)
+}
+
+var chkDeposit = function() {
+    chkBalance = Number(userInputChk.value) + chkBalance
+    updateBalance(chkBalance,checkingBackground,checkingBalance)
+}
+
+var savWithdraw = function() {
+    if (Number(userInputSav.value) > Number(savingsBalance.textContent)){
+        alert("You can't withdraw more than your available balance")
+        return savBalance
+    }
+    savBalance = savBalance - Number(userInputSav.value)
+    updateBalance(savBalance,savingsBackground,savingsBalance)
+}
+
+var chkWithdraw = function() {
+    if (Number(userInputChk.value) > Number(checkingBalance.textContent)){
+        alert("You can't withdraw more than your available balance")
+        return chkBalance
+    }
+    chkBalance = chkBalance - Number(userInputChk.value)
+    updateBalance(chkBalance,checkingBackground,checkingBalance)
+}
+
+var savBalance = 0;
+updateBalance(savBalance,savingsBackground,savingsBalance)
+
+var chkBalance = 0;
+updateBalance(chkBalance,checkingBackground,checkingBalance)
+
+withdrawButton.addEventListener('click', savWithdraw)
+depositButton.addEventListener('click', savDeposit)
+withdrawChkButton.addEventListener('click', chkWithdraw)
+depositChkButton.addEventListener('click', chkDeposit)
 

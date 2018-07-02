@@ -54,11 +54,7 @@ main {
     
 }
 
-.savings {
-    background-color: orange;
-}
-
-.savings > p, .checking > p {
+.container p {
     line-height: 5px;
     font-weight: 600;
     font-size: 12px;
@@ -66,11 +62,6 @@ main {
 
 h2 {
     font-size: 20px;
-}
-
-p {
-    font-size: 15px;
-    font-weight: 500;
 }
 
 .balance {
@@ -105,9 +96,6 @@ button {
     line-height: 8px;
 }
 
-.balance {
-
-}
 
 .container {
     width: 100%;

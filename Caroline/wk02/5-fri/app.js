@@ -28,6 +28,7 @@ var num = 10;
 var countdown = function() {
         console.log(num)
         num--
+        
         if (num === 0){
             window.clearInterval(intervalID)
             console.log('BOOM! Timer stopped.')
