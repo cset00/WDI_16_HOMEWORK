@@ -1,6 +1,8 @@
+require 'pry'
+
 puts "Type in ANY value to start temp_coverter or press Q at any time to quit the program"
 temp_value = gets 
-
+# instead of using puts, you could also use 'print'. Just gives you the cursor next to the question, instead of underneath (break).
 
 def convert_temp(value,unit)
     if unit.chomp == "f"
@@ -31,7 +33,7 @@ while temp_value.chomp != 'Q'
     temp_value = gets 
 
     if temp_value.chomp == 'Q'
-        return
+        return #could use 'exit' to exit the program. or 'break' to exit the loop
     else
         puts "Type in the temp unit: "
         temp_unit = gets
@@ -44,6 +46,20 @@ while temp_value.chomp != 'Q'
     end
 end
 
+binding.pry
+
+#create an exit method
+# if response == 'Q'
+#     exit
+# else
+#     puts 'bla bla bla'
+# end
+
+# #could also cheat and use 'loop do' and 'break'
+# loop do
+
+
+# end
 
 
 
