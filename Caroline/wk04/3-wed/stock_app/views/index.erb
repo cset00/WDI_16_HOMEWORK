@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
      <header>
-        <%# <% if @stock %> 
-            <h1><%= @stock %></h1>
+        <%# <% if :stock_symbol == true %>
+            <h1><%= params[:stock_symbol].upcase %></h1>
             <h2><%= @stock.company_name %></h2>
-              <p>
-            $<%=@stock.close %> 
+              <p> $<%=@stock.close %> 
             <span class="change"><%= @stock.change %> (<%= @stock.change_percent %>)</span>
-            <p><small>closed as of <%=  @stock.close_time %></small></p>
+            <p><small>closed as of <%=  Time.at(@stock.close_time) %></small></p>
             </p>
-        <%# <%= else %>
-            <%# <p>Stock <%= @stock not found.</p>  %>
-        <%# <%= end %> 
+        <%# <% else %>
+             <%# <p> <%= "#{params[:stock_symbol]} not found."%> </p>
+        <%# <% end %> 
      </header>
      <main>
      
