@@ -1,0 +1,10 @@
+body {
+    font-family: 'Gaegu', cursive;
+    width: 80%;
+    margin: 0 auto;
+    background: linear-gradient(123deg, #22cfa2, #8e22cf);
+    background-size: 800% 800%;
+    text-align: center;
+    margin-top: 150px;
+    font-size: 2em;
+}

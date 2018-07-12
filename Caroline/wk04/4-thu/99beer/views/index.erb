@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+    <img src="https://media.giphy.com/media/V6vYGxjArFFde/giphy.gif" alt="homer_beer">
+    </div>
+    <% if @thing == 0 %>
+        <h1>No bottles of beer on the wall</h1>
+        <a href="/99">Start Over</a>
+    <% elsif @thing == 1 %>
+        <h1> <%= @thing %> bottle of beer</h1>
+        <a href= <%= "/#{@thing - 1}" %> >Take one down</a>
+    <% else %>
+        <h1> <%= @thing %> bottles of beer</h1>
+        <a href= <%= "/#{@thing - 1}" %> >Take one down</a>
+<% end %>
+</body>
+</html>
