@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <header>
+        <%# <% if @stock %> 
+            <h1><%= @stock %></h1>
+            <h2><%= @stock.company_name %></h2>
+              <p>
+            $<%=@stock.close %> 
+            <span class="change"><%= @stock.change %> (<%= @stock.change_percent %>)</span>
+            <p><small>closed as of <%=  @stock.close_time %></small></p>
+            </p>
+        <%# <%= else %>
+            <%# <p>Stock <%= @stock not found.</p>  %>
+        <%# <%= end %> 
+     </header>
+     <main>
+     
+     </main>
+
+     <footer>
+        <a href="about.erb">About</a>
+     </footer>
+    
+    
+</body>
+</html>

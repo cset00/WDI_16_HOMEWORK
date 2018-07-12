@@ -59,6 +59,11 @@ users = {
     :favorite_numbers => [12, 14, 85],
   },
 }
+
+# ^ could type users.keys and will return the names
+# could type users.values and will return only the values of each user
+# could type users.class and will return hash.
+
 # How would you access Jonathan's Twitter handle (i.e. the string "tronathan")?
 users["Jonathan"][:twitter]
 
@@ -75,10 +80,17 @@ users["Erik"][:favorite_numbers]
 users["Erik"][:favorite_numbers].min
 
 # How would you return an array of Anil's favorite numbers that are also even?
-users["Anil"][:favorite_numbers].select { |num| num.even? }
+even_numbers = users["Anil"][:favorite_numbers].select { |num| num.even? }
 
 # How would you return an array of the favorite numbers common to all users?
 users["Anil"][:favorite_numbers] & users["Erik"][:favorite_numbers] & users["Jonathan"][:favorite_numbers]
+#see below for better solution (not finished)
+# result_arr = users.values.map do |hash|
+#   hash[:favorite_numbers]
+#   # somehow add ampersand.
+# end
+
+# common_numbers = []
 
 # How would you return an array containing all users' favorite numbers, 
 # sorted, and excluding duplicates?
@@ -88,6 +100,10 @@ jon_num = users["Jonathan"][:favorite_numbers]
 
 all_num = anil_num.concat(erik_num, jon_num).sort.uniq
 # all_num = users["Anil"][:favorite_numbers].concat(users["Erik"][:favorite_numbers], users["Jonathan"][:favorite_numbers]).sort.uniq
+# check out below. more concise and less manual
+result_arr = users.values.map do |hash|
+  hash[:favorite_numbers]
+end.flatten.uniq.sort
 
 
 

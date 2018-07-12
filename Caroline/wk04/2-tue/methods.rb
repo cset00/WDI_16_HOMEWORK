@@ -105,5 +105,11 @@ def longest (arr)
     arr.max_by {|str| str.length}
 end
 
+# or see below (Alex's code)
+def longest2(collection)
+    collection.max { |a, b| a.length <=> b.length }
+end
+
+# numericals (google)
 
 # binding.pry
