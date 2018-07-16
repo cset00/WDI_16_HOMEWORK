@@ -7,24 +7,28 @@ class Animal
         @toys = []
     end
 
+    def to_s
+        "Animal name: #{name}, Age: #{@age}, Gender: #{@gender}, Species: #{@species}, List of toys: #{@list_of_toys.join(', ')}"
+    end
+
     def name
-        return @name
+        @name
     end
 
     def age
-        return @age
+        @age
     end
 
     def gender
-        return @gender
+        @gender
     end
 
     def species
-        return @species
+        @species
     end
 
     def toys
-        return @toys
+        @toys
     end
 
     def add_toy (toy)

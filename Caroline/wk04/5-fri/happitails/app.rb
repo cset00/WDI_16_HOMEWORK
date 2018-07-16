@@ -69,55 +69,39 @@ def adopt_pet(client_name, pet_name)
     client = $clients.select { |clt| clt.name == client_name }
     if client == []
         puts "Client #{client_name} is not in our database. Please make sure you create a client first."
-        print "Back to menu? (y/n) "
-        yesno = gets.chomp.upcase
-
-        if yesno == 'N' || yesno == 'Q' 
-            exit
-        else
-            show_menu
-        end
+        menu?
     end
 
     animal = $animals.select { |anm| anm.name == pet_name }
     if animal == []
         puts "We can't find the pet #{pet_name} in our database."
-        print "Back to menu? (y/n) "
-        yesno = gets.chomp.upcase
-
-        if yesno == 'N' || yesno == 'Q' 
-            exit
-        else
-            show_menu
-        end
+        menu?
     end
     
     $animals.each do |animal|
         if animal.name == pet_name
-            $clients.each do |client|
-                if client.name == client_name
-                    client.list_of_pets.push(animal)
-                    $animals.delete(animal)
-                    puts "#{animal.name} has been adopted by #{client.name}!"  
-                end
-            end
+            # $clients.each do |client|
+            #     if client.name == client_name
+            #         add_pet_to_client(client, animal)
+            #     end
+            # end
+            client_to_add = $clients.find { |client| client.name == client_name }
+            add_pet_to_client(client_to_add, animal)
         end
     end
 end
 
+def add_pet_to_client client, animal
+    client.list_of_pets.push(animal)
+    $animals.delete(animal)
+    puts "#{animal.name} has been adopted by #{client.name}!"
+end
 
 def giveup_pet(client_name, pet_name)
     client = $clients.select { |clt| clt.name == client_name }
     if client == []
         puts "Client #{client_name} is not in our database. Please make sure you create a client first."
-        print "Back to menu? (y/n) "
-        yesno = gets.chomp.upcase
-
-        if yesno == 'N' || yesno == 'Q' 
-            exit
-        else
-            show_menu
-        end
+        menu?
     end
     
     $clients.each do |client|
@@ -125,14 +109,7 @@ def giveup_pet(client_name, pet_name)
             pet = client.list_of_pets.select { |pet| pet.name == pet_name }
             if pet == []
                 puts "We can't find pet #{pet_name} in #{client_name}'s list of pets"
-                print "Back to menu? (y/n) "
-                yesno = gets.chomp.upcase
-
-                if yesno == 'N' || yesno == 'Q' 
-                    exit
-                else
-                    show_menu
-                end
+                menu?
             end
             client.list_of_pets.each do |pet|
                 if pet.name == pet_name
@@ -145,6 +122,28 @@ def giveup_pet(client_name, pet_name)
     end
 end
 
+def menu?
+    print "Back to menu? (y/n) "
+    yesno = gets.chomp.upcase
+
+    if yesno == 'N' || yesno == 'Q' 
+        exit
+    else
+        show_menu
+    end
+end
+
+def display_animals
+    $animals.each do |animal|
+        puts "#{animal.name}, age #{animal.age}, #{animal.gender}, species: #{animal.species}"
+    end
+end
+
+def display_clients
+    $clients.each do |client|
+        puts "#{client.name}, number of children: #{client.num_children}, age #{client.age}, list of pets: #{client.list_of_pets}"
+    end
+end
 
 def show_menu
     puts "1. Display all animals"
@@ -159,65 +158,27 @@ def show_menu
 
     case
     when @user_selection == '1'
-        $animals.each do |animal|
-            puts "#{animal.name}, age #{animal.age}, #{animal.gender}, species: #{animal.species}"
-        end
+        display_animals
+        menu?
         
-        print "Back to menu? (y/n) "
-        yesno = gets.chomp.upcase
-
-        if yesno == 'N' || yesno == 'Q' 
-            exit
-        else
-            show_menu
-        end
     when @user_selection == '2'
-        $clients.each do |client|
-            puts "#{client.name}, number of children: #{client.num_children}, age #{client.age}, list of pets: #{client.list_of_pets}"
-        end
+        display_clients
+        menu?
 
-        print "Back to menu? (y/n) "
-        yesno = gets.chomp.upcase
-
-        if yesno == 'N' || yesno == 'Q' 
-            exit
-        else
-            show_menu
-        end
     when @user_selection == '3'
         create_animal
         puts "#{$animals.last.name} has been added!"
+        menu?
         
-        print "Back to menu? (y/n) "
-        yesno = gets.chomp.upcase
-
-        if yesno == 'N' || yesno == 'Q' 
-            exit
-        else
-            show_menu
-        end
     when @user_selection == '4'
         create_client
         puts "#{$clients.last.name} has been added!" 
-        
-        print "Back to menu? (y/n) "
-        yesno = gets.chomp.upcase
+        menu?
 
-        if yesno == 'N' || yesno == 'Q' 
-            exit
-        else
-            show_menu
-        end
     when @user_selection == '5'
         if $animals == []
             puts "There are no animals in the shelter at the moment..."
-            print "Back to menu? (y/n) "
-            yesno = gets.chomp.upcase
-            if yesno == 'N' || yesno == 'Q' 
-                exit
-            else
-                show_menu
-            end
+            menu?
         end
 
         print "Client name: "
@@ -228,14 +189,7 @@ def show_menu
 
         adopt_pet(client_name, animal_name)
         
-        print "Back to menu? (y/n) "
-        yesno = gets.chomp.upcase
-
-        if yesno == 'N' || yesno == 'Q' 
-            exit
-        else
-            show_menu
-        end
+        menu?
     when @user_selection == '6'
         print "Client name: "
         client_name = gets.chomp
@@ -245,14 +199,7 @@ def show_menu
 
         giveup_pet(client_name, animal_name)
 
-        print "Back to menu? (y/n) "
-        yesno = gets.chomp.upcase
-
-        if yesno == 'N' || yesno == 'Q' 
-            exit
-        else
-            show_menu
-        end
+        menu?
     when @user_selection == '7' || @user_selection == 'Q'
         exit
     else

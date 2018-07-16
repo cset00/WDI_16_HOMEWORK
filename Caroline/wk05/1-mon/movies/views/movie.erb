@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </header>
+    <main>
+        <section class="container-top">
+            <section>
+                <h1> <%= @result["Title"] %></h1> <span class="year">(<%= @result["Year"] %>)</span>
+                <p class="more-details"> 
+                    <%= @result["Rated"] %>  |  
+                    <%= @result["Runtime"] %>  |  
+                    <%= @result["Genre"] %>  |  
+                    <%= @result["Released"] %>
+                </p>
+            </section>
+            <section>
+                <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/2000px-Gold_Star.svg.png" alt="">
+                <h2><%= @result["Ratings"][0]["Value"] %> </h2>
+            </section>
+        </section>
+        <div class="container">
+            <section>
+                <img src= <%= @result["Poster"]  %> >
+            </section>
+            <aside>
+                <p>
+                    <%= @result["Plot"] %>
+                </p>
+                <p><span class="keys">Director: </span> <%= @result["Director"] %> </p>
+                <p><span class="keys">Writer/s: </span> <%= @result["Writer"] %> </p>
+                <p><span class="keys">Stars: </span> <%= @result["Actors"] %> </p>
+                </p>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>

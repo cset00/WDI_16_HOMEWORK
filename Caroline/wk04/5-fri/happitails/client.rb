@@ -6,20 +6,24 @@ class Client
        @list_of_pets = []
     end
 
+    def to_s
+        "Client name: #{name}, Number of children: #{@num_children}, Age: #{@age}, List of pets: #{@list_of_pets.join(', ')}"
+    end
+
     def name 
-        return @name
+        @name
     end
 
     def num_children
-        return @num_children
+        @num_children
     end
 
     def age
-        return @age
+        @age
     end
 
     def list_of_pets
-        return @list_of_pets
+        @list_of_pets
     end
 
 

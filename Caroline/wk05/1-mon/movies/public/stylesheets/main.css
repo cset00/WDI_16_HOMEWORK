@@ -1,0 +1,105 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: linen;
+    margin: 0px;
+
+    
+}
+
+header {
+    background-color: salmon;
+    padding: 15px;
+    text-align: center;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+section {
+    margin: 20px 0px;
+}
+
+.search {
+    margin: 50px auto;
+    text-align: center;
+}
+
+a {
+    /* color: white; */
+    color: rgb(168, 37, 23);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.year {
+    font-size: 1em;
+}
+
+h1 {
+    display: inline;
+    font-size: 2em;
+    color: rgb(168, 37, 23);
+}
+
+.more-details {
+    font-size: .8em;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+p {
+    color: darkslategray;
+}
+
+.keys {
+    font-weight: 900;
+    color: rgb(19, 19, 22);
+}
+
+aside {
+    margin: 20px;
+}
+
+input {
+    border: 1px solid salmon;
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+button {
+    border: 1px solid salmon;
+    color: rgb(168, 37, 23);
+    padding: 10px;
+    width: 60px;
+}
+
+img {
+    border: 5px solid white;
+}
+
+.container-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -5px;
+}
+
+.star {
+    width: 50px;
+    height: 50px;
+    border: none;
+    margin-bottom: -15px;
+}
+
+h2 {
+    display: inline;
+}
