@@ -84,7 +84,7 @@ button {
 }
 
 img {
-    border: 5px solid white;
+    border: 5px solid salmon;
 }
 
 .container-top {
@@ -102,4 +102,8 @@ img {
 
 h2 {
     display: inline;
+}
+
+.list {
+    margin-left: 40px;
 }

@@ -1,0 +1,14 @@
+    <header>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </header>
+    <div class="list">
+        <% @list["Search"].each do |movie| %>
+            <p>
+                <a href="/movie/<%=movie["Title"] %>">
+                    <%=movie["Title"]%>
+                </a>
+                <span>(<%=movie["Year"]%>)</span>
+            </p>
+        <% end  %>
+    </div>
