@@ -6,30 +6,30 @@
     <main>
         <section class="container-top">
             <section>
-                <h1> <%= @result["Title"] %></h1> <span class="year">(<%= @result["Year"] %>)</span>
+                <h1> <%= @result["Title"] || @result["movie_title"]%></h1> <span class="year">(<%= @result["Year"] || @result["year"]%>)</span>
                 <p class="more-details"> 
-                    <%= @result["Rated"] %>  |  
-                    <%= @result["Runtime"] %>  |  
-                    <%= @result["Genre"] %>  |  
-                    <%= @result["Released"] %>
+                    <%= @result["Rated"] || @result["classification"]%>  |  
+                    <%= @result["Runtime"] || @result["runtime"]%>  |  
+                    <%= @result["Genre"] || @result["genre"]%>  |  
+                    <%= @result["Released"] || @result["released"] %>
                 </p>
             </section>
             <section>
                 <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/2000px-Gold_Star.svg.png" alt="">
-                <h2><%= @result["Ratings"][0]["Value"] %> </h2>
+                <h2><%= @result["imdbRating"] || @result["rating"]%> </h2>
             </section>
         </section>
         <div class="container">
             <section>
-                <img src= <%= @result["Poster"]  %> >
+                <img src= <%= @result["Poster"] || @result["poster_url"] %> >
             </section>
             <aside>
                 <p>
-                    <%= @result["Plot"] %>
+                    <%= @result["Plot"] || @result["plot"] %>
                 </p>
-                <p><span class="keys">Director: </span> <%= @result["Director"] %> </p>
-                <p><span class="keys">Writer/s: </span> <%= @result["Writer"] %> </p>
-                <p><span class="keys">Stars: </span> <%= @result["Actors"] %> </p>
+                <p><span class="keys">Director: </span> <%= @result["Director"] || @result["director"]%> </p>
+                <p><span class="keys">Writer/s: </span> <%= @result["Writer"] || @result["writer"]%> </p>
+                <p><span class="keys">Stars: </span> <%= @result["Actors"] || @result["actors"]%> </p>
                 </p>
             </aside>
         </div>
