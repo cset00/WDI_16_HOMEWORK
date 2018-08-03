@@ -1,5 +1,6 @@
 console.log('working')
-var movieList = document.querySelector('.movie-list')
+// var movieList = document.querySelector('.movie-list')
+
 var searchBtn = document.querySelector('.search-btn')
 var results = document.querySelector('.results')
 
