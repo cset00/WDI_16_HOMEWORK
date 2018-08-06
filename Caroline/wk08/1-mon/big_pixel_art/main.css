@@ -10,3 +10,7 @@
     background-color: blue;
     display: inline-block;
 }
+
+.change-color {
+    background-color: green;
+}
