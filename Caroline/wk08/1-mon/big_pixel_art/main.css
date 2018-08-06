@@ -1,16 +1,22 @@
 .brush {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     background-color: red;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .square {
     width: 20px;
     height: 20px;
-    background-color: blue;
     display: inline-block;
 }
 
 .change-color {
     background-color: green;
+}
+
+.container {
+    /* background-image: url('https://m.media-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg'); */
+    background-size: cover;
 }
