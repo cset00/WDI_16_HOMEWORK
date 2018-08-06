@@ -7,11 +7,12 @@ movieInput = $('.movie')
 setColorBtn.on('click', function(event){
     event.preventDefault()
     console.log('color clicked')
+    $('.brush').css("background-color", `${$('.color-input').val()}`)
     //change color of 'brush' box to color i specify in input field
 })
 
 var createSquares = function (){
-    for (var i=0; i<1000; i++){
+    for (var i=0; i<500; i++){
         var div = $('<div>').addClass('square')
         container.append(div)
     }
@@ -32,10 +33,10 @@ movieBtn.on('click', function(event){
     console.log('movie clicked')
 
     
-
     function onSuccess(responseData){
         console.log(responseData)
-        container.css("background", `url(${responseData["Poster"]})`)
+        container.css({"background": `url(${responseData["Poster"]})`, "background-size": "cover", "background-repeat": "no-repeat"})
+        // container.css("background", `url(${responseData["Poster"]})`).width('100%')
     }
 
     $.ajax({
