@@ -1,6 +1,7 @@
 setColorBtn = $('.set-color-btn')
 container = $('.container')
 
+
 setColorBtn.on('click', function(event){
     event.preventDefault()
     console.log('CLICK')
@@ -17,7 +18,8 @@ var createSquares = function (){
 createSquares()
 
 container.on('click', '.square', function(){
-    $(event.target).addClass('change-color')
+    // $(event.target).addClass('change-color')
+    $(event.target).css("background-color", `${$('input').val()}`)
 })
 
 
