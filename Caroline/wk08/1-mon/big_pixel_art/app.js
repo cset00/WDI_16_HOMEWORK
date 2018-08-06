@@ -17,7 +17,7 @@ var createSquares = function (){
 
 createSquares()
 
-container.on('click', '.square', function(){
+container.on('mouseover', '.square', function(){
     // $(event.target).addClass('change-color')
     $(event.target).css("background-color", `${$('input').val()}`)
 })
