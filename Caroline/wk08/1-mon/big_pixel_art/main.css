@@ -4,6 +4,9 @@
     background-color: red;
 }
 
-.user-color {
-
+.square {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    display: inline-block;
 }
