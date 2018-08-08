@@ -1,0 +1,12 @@
+<h1><%= @planet.name %></h1>
+
+<p><%= @planet.description %></p>
+<p><%= @planet.distance_fr_earth %></p>
+
+<a href="/planets/<%= @planet.id%>/edit">update</a>
+
+<form action="/planets/<%= @planet.id%>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="delete">
+    <button>delete</button>
+</form>

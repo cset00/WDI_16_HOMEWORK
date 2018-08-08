@@ -1,0 +1,15 @@
+<form action="/planets/<%= @planet.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label for="">planet name:</label>    
+    <input type="text" name="name" value="<%= @planet.name %>">
+
+    <label for="">description:</label>
+    <input type="text" name="description" value="<%= @planet.description %>">
+    
+    <label for="">distance from earth (km):</label>
+    <input type="text" name="distance_fr_earth" value="<%= @planet.distance_fr_earth %>">
+    
+    <button>update</button>
+</form>

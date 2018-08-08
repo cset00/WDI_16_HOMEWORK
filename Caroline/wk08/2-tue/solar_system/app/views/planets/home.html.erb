@@ -1,0 +1,9 @@
+<h1>home</h1>
+
+<a href="/planets/new">add your own planet</a>
+
+<% @planets.each do |planet| %>
+
+    <p><a href="/planets/<%= planet.id %>"><%= planet.name %></a></p>
+
+<% end %>

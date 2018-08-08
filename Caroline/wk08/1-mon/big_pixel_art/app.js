@@ -24,7 +24,7 @@ createSquares()
 
 container.on('mouseover', '.square', function(){
     // $(event.target).addClass('change-color')
-    $(event.target).css("background-color", `${$('.color-input').val()}`)
+    $(event.target).css("background-color", $('.brush').css("background-color"))
 })
 
 
