@@ -1,0 +1,66 @@
+// Place all the styles related to the bookmarks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+    box-sizing: border-box;
+}
+
+$green: mediumspringgreen;
+$yellow: rgb(250, 250, 175);
+$orange: rgb(250, 227, 184);
+
+body {
+    background-color: $green;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    display: inline-block;
+    border: 1px solid black;
+    background-color: $orange;
+    padding: 5px;
+    cursor: pointer;
+
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+    font-size: 2em;
+    border: 1px solid black;
+    background-color: $yellow;
+    padding: 5px 20px;
+}
+
+.container {
+    // display: inline-block;
+    
+    // justify-content: flex-start;
+}
+
+nav {
+    margin-bottom: 50px;
+    // background-color: $yellow;
+}
+
+.para {
+    line-height: 3;
+}
+
+.click-count {
+    color: grey;
+    font-size: 1em;
+}

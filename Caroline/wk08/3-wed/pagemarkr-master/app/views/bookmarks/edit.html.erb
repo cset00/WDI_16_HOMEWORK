@@ -1,0 +1,23 @@
+<!-- 
+
+<form action="/bookmarks/= @bookmark.id" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="text" name="url" value="<%= @bookmark.url %>">
+  <button>update</button>
+</form>
+
+<%= form_tag "/bookmarks/#{@bookmark.id}", method: 'put' do %>
+  <input type="text" name="url" value="<%= @bookmark.url %>">
+  <button>update</button>
+<% end %> 
+
+-->
+
+<%# # using the method form_tag saves you time from having to use authenticity authenticity_token %>
+
+<%# omg... and what's even better.. the above can just be written like below %>
+<%= form_for @bookmark do %>
+  <input type="text" name="url" value="<%= @bookmark.url %>">
+  <button>update</button>
+<% end %>
