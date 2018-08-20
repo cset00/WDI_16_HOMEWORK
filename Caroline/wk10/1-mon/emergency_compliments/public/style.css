@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.container {
+    height: 80vh;
+    text-align: center;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
